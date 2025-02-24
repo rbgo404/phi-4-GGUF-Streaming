@@ -1,0 +1,6 @@
+build:
+  cuda_version: "12.1.1"
+  python_packages:
+    - hf-transfer==0.1.9
+    - huggingface-hub==0.29.1
+    - llama-cpp-python==0.3.7
