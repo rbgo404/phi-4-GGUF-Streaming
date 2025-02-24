@@ -4,4 +4,4 @@ build:
     - hf-transfer==0.1.9
     - huggingface-hub==0.29.1
   run:
-    - 'CMAKE_ARGS="-DGGML_CUDA=on" pip install llama-cpp-python==0.3.7'
+    - 'CMAKE_ARGS="-DGGML_CUDA=on -DCMAKE_CUDA_ARCHITECTURES=80" pip install llama-cpp-python==0.3.7'
