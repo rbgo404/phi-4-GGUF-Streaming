@@ -7,7 +7,7 @@ class InferlessPythonModel:
     def initialize(self):
         model_id = "unsloth/phi-4-GGUF"
         snapshot_download(repo_id=model_id,allow_patterns=["phi-4-Q4_K_M.gguf"])
-        self.llm = Llama.from_pretrained(repo_id=model_id,filename="phi-4-Q4_K_M.gguf")
+        self.llm = Llama.from_pretrained(repo_id=model_id,filename="phi-4-Q4_K_M.gguf",main_gpu=0,n_gpu_layers=-1)
       
     def infer(self, inputs):
         prompt = inputs["prompt"]
