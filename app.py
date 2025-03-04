@@ -12,11 +12,11 @@ class InferlessPythonModel:
     def infer(self, inputs,stream_output_handler):
         prompt = inputs["prompt"]
         system_prompt = inputs.get("system_prompt","You are a friendly bot.")
-        temperature = inputs.get("temperature",0.7)
-        top_p = inputs.get("top_p",0.1)
-        top_k = inputs.get("top_k",40)
-        repeat_penalty = inputs.get("repeat_penalty",1.18)
-        max_tokens = inputs.get("max_tokens",256)
+        temperature = float(inputs.get("temperature",0.7))
+        top_p = float(inputs.get("top_p",0.1))
+        top_k = int(inputs.get("top_k",40))
+        repeat_penalty = float(inputs.get("repeat_penalty",1.18))
+        max_tokens = int(inputs.get("max_tokens",256))
         
         output = self.llm.create_chat_completion(
                     messages = [
