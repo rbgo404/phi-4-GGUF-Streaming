@@ -42,3 +42,5 @@ INPUT_SCHEMA = {
         'example': [40]
     }
 }
+
+IS_STREAMING_OUTPUT = True
